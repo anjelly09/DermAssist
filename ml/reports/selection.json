@@ -1,0 +1,26 @@
+{
+  "baselines": {
+    "logistic": {
+      "parameter": 10.0,
+      "tune_macro_f1": 0.3346965452847806
+    },
+    "knn": {
+      "parameter": 3,
+      "tune_macro_f1": 0.37201812286491803
+    }
+  },
+  "selected": "frozen_transfer",
+  "frozen_tune_loss": 0.9080246686935425,
+  "fine_tune_loss": 0.9446808695793152,
+  "temperature": 2.287453194924214,
+  "policy": {
+    "enabled": true,
+    "confidence_threshold": 0.575,
+    "distance_threshold": 0.33219332695007325,
+    "coverage": 0.15789473684210525,
+    "accepted_accuracy": 0.8888888888888888,
+    "accepted_n": 9,
+    "ood_false_acceptance": 0.07042253521126761,
+    "ood_n": 142
+  }
+}

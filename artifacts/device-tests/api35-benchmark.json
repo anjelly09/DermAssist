@@ -1,0 +1,9 @@
+{
+  "runs": 10,
+  "median_ms": 1,
+  "max_ms": 5,
+  "max_absolute_output_error": 1.3470649719238281E-5,
+  "device": "sdk_gphone64_x86_64",
+  "api": 35,
+  "note": "Emulator CPU timing; not representative of an inexpensive phone"
+}

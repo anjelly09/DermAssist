@@ -1,0 +1,1 @@
+{"case_id": "-101827005996397499", "source": "SCIN", "source_path": "dataset/images/-217828380359571871.png", "license": "https://github.com/google-research-datasets/scin/blob/main/LICENSE", "modifications": "Resized to 160x160 RGB and normalized to float32 [-1,1]"}

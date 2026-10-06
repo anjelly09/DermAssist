@@ -1,0 +1,17 @@
+.gradle/
+.kotlin/
+.idea/
+**/build/
+local.properties
+*.iml
+*.jks
+*.keystore
+.DS_Store
+
+SETUP.local.md
+ml/data/
+ml/runs/
+ml/.venv/
+__pycache__/
+.pytest_cache/
+*.pyc

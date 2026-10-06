@@ -1,0 +1,771 @@
+{
+  "classes": [
+    "Eczema",
+    "Urticaria",
+    "Folliculitis"
+  ],
+  "seed": 20261006,
+  "split_counts": {
+    "train": 338,
+    "tune": 84,
+    "calibration": 57,
+    "test": 86,
+    "ood_calibration": 142,
+    "ood_test": 95
+  },
+  "selection": {
+    "baselines": {
+      "logistic": {
+        "parameter": 10.0,
+        "tune_macro_f1": 0.3346965452847806
+      },
+      "knn": {
+        "parameter": 3,
+        "tune_macro_f1": 0.37201812286491803
+      }
+    },
+    "selected": "frozen_transfer",
+    "frozen_tune_loss": 0.9080246686935425,
+    "fine_tune_loss": 0.9446808695793152,
+    "temperature": 2.287453194924214,
+    "policy": {
+      "enabled": true,
+      "confidence_threshold": 0.575,
+      "distance_threshold": 0.33219332695007325,
+      "coverage": 0.15789473684210525,
+      "accepted_accuracy": 0.8888888888888888,
+      "accepted_n": 9,
+      "ood_false_acceptance": 0.07042253521126761,
+      "ood_n": 142
+    }
+  },
+  "baselines": {
+    "majority": {
+      "n": 86,
+      "accuracy": 0.5581395348837209,
+      "accuracy_ci95": [
+        0.4529326746260169,
+        0.6583743368252482
+      ],
+      "macro_f1": 0.23880597014925373,
+      "per_class": {
+        "Eczema": {
+          "precision": 0.5581395348837209,
+          "recall": 1.0,
+          "f1-score": 0.7164179104477612,
+          "support": 48.0
+        },
+        "Urticaria": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25.0
+        },
+        "Folliculitis": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 13.0
+        },
+        "accuracy": 0.5581395348837209,
+        "macro avg": {
+          "precision": 0.18604651162790697,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.23880597014925373,
+          "support": 86.0
+        },
+        "weighted avg": {
+          "precision": 0.3115197404002163,
+          "recall": 0.5581395348837209,
+          "f1-score": 0.39986115931968064,
+          "support": 86.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          48,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          0
+        ]
+      ],
+      "calibration": {
+        "ece": 0.4418604651162791,
+        "brier": 0.8837209302325582,
+        "nll": 8.13937056128128
+      }
+    },
+    "logistic": {
+      "n": 86,
+      "accuracy": 0.37209302325581395,
+      "accuracy_ci95": [
+        0.27746093282766765,
+        0.4776636419795485
+      ],
+      "macro_f1": 0.3026746182343905,
+      "per_class": {
+        "Eczema": {
+          "precision": 0.6486486486486487,
+          "recall": 0.5,
+          "f1-score": 0.5647058823529412,
+          "support": 48.0
+        },
+        "Urticaria": {
+          "precision": 0.1935483870967742,
+          "recall": 0.24,
+          "f1-score": 0.21428571428571427,
+          "support": 25.0
+        },
+        "Folliculitis": {
+          "precision": 0.1111111111111111,
+          "recall": 0.15384615384615385,
+          "f1-score": 0.12903225806451613,
+          "support": 13.0
+        },
+        "accuracy": 0.37209302325581395,
+        "macro avg": {
+          "precision": 0.3177693822855114,
+          "recall": 0.29794871794871797,
+          "f1-score": 0.3026746182343905,
+          "support": 86.0
+        },
+        "weighted avg": {
+          "precision": 0.4350963867092899,
+          "recall": 0.37209302325581395,
+          "f1-score": 0.3969819135456133,
+          "support": 86.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          24,
+          16,
+          8
+        ],
+        [
+          11,
+          6,
+          8
+        ],
+        [
+          2,
+          9,
+          2
+        ]
+      ],
+      "calibration": {
+        "ece": 0.4782653003848753,
+        "brier": 0.9708436001244519,
+        "nll": 3.091246897569452
+      }
+    },
+    "knn": {
+      "n": 86,
+      "accuracy": 0.5465116279069767,
+      "accuracy_ci95": [
+        0.44155981420304113,
+        0.6474857949579708
+      ],
+      "macro_f1": 0.43480479549388934,
+      "per_class": {
+        "Eczema": {
+          "precision": 0.6938775510204082,
+          "recall": 0.7083333333333334,
+          "f1-score": 0.7010309278350515,
+          "support": 48.0
+        },
+        "Urticaria": {
+          "precision": 0.3548387096774194,
+          "recall": 0.44,
+          "f1-score": 0.39285714285714285,
+          "support": 25.0
+        },
+        "Folliculitis": {
+          "precision": 0.3333333333333333,
+          "recall": 0.15384615384615385,
+          "f1-score": 0.21052631578947367,
+          "support": 13.0
+        },
+        "accuracy": 0.5465116279069767,
+        "macro avg": {
+          "precision": 0.46068319801038693,
+          "recall": 0.43405982905982904,
+          "f1-score": 0.43480479549388934,
+          "support": 86.0
+        },
+        "weighted avg": {
+          "precision": 0.540818878188935,
+          "recall": 0.5465116279069767,
+          "f1-score": 0.5372994792183046,
+          "support": 86.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          34,
+          12,
+          2
+        ],
+        [
+          12,
+          11,
+          2
+        ],
+        [
+          3,
+          8,
+          2
+        ]
+      ],
+      "calibration": {
+        "ece": 0.20082287643266866,
+        "brier": 0.6956991008223966,
+        "nll": 3.9852389426070927
+      }
+    }
+  },
+  "neural": {
+    "n": 86,
+    "accuracy": 0.43023255813953487,
+    "accuracy_ci95": [
+      0.3307917119906583,
+      0.5356398742678232
+    ],
+    "macro_f1": 0.3762254901960784,
+    "per_class": {
+      "Eczema": {
+        "precision": 0.6216216216216216,
+        "recall": 0.4791666666666667,
+        "f1-score": 0.5411764705882353,
+        "support": 48.0
+      },
+      "Urticaria": {
+        "precision": 0.36666666666666664,
+        "recall": 0.44,
+        "f1-score": 0.4,
+        "support": 25.0
+      },
+      "Folliculitis": {
+        "precision": 0.15789473684210525,
+        "recall": 0.23076923076923078,
+        "f1-score": 0.1875,
+        "support": 13.0
+      },
+      "accuracy": 0.43023255813953487,
+      "macro avg": {
+        "precision": 0.38206100837679785,
+        "recall": 0.38331196581196586,
+        "f1-score": 0.3762254901960784,
+        "support": 86.0
+      },
+      "weighted avg": {
+        "precision": 0.4774085591099055,
+        "recall": 0.43023255813953487,
+        "f1-score": 0.4466740766073871,
+        "support": 86.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        23,
+        13,
+        12
+      ],
+      [
+        10,
+        11,
+        4
+      ],
+      [
+        4,
+        6,
+        3
+      ]
+    ],
+    "calibration": {
+      "ece": 0.0836024273966634,
+      "brier": 0.6325102452422082,
+      "nll": 1.0462859869003296
+    },
+    "macro_f1_bootstrap_ci95": [
+      0.2739270152505447,
+      0.48228472718880183
+    ]
+  },
+  "uncalibrated": {
+    "ece": 0.21755601431048194,
+    "brier": 0.6907243912935473,
+    "nll": 1.1642383337020874
+  },
+  "selective": {
+    "accepted_n": 10,
+    "total_n": 86,
+    "coverage": 0.11627906976744186,
+    "rejected_fraction": 0.8837209302325582,
+    "accepted_accuracy": 0.6,
+    "accepted_accuracy_ci95": [
+      0.3126695474501864,
+      0.8318224187964902
+    ]
+  },
+  "ood": {
+    "n": 95,
+    "false_acceptance": 0.10526315789473684,
+    "confidence_auroc": 0.4791921664626683
+  },
+  "model_bytes": 1000152,
+  "fairness": {
+    "1\u20133": {
+      "n": 72,
+      "insufficient_evidence": false,
+      "metrics": {
+        "n": 72,
+        "accuracy": 0.4583333333333333,
+        "accuracy_ci95": [
+          0.3482843869513592,
+          0.5726033580329238
+        ],
+        "macro_f1": 0.40619967793880835,
+        "per_class": {
+          "Eczema": {
+            "precision": 0.625,
+            "recall": 0.5405405405405406,
+            "f1-score": 0.5797101449275363,
+            "support": 37.0
+          },
+          "Urticaria": {
+            "precision": 0.4,
+            "recall": 0.43478260869565216,
+            "f1-score": 0.4166666666666667,
+            "support": 23.0
+          },
+          "Folliculitis": {
+            "precision": 0.2,
+            "recall": 0.25,
+            "f1-score": 0.2222222222222222,
+            "support": 12.0
+          },
+          "accuracy": 0.4583333333333333,
+          "macro avg": {
+            "precision": 0.40833333333333327,
+            "recall": 0.4084410497453976,
+            "f1-score": 0.40619967793880835,
+            "support": 72.0
+          },
+          "weighted avg": {
+            "precision": 0.4822916666666667,
+            "recall": 0.4583333333333333,
+            "f1-score": 0.46804549114331717,
+            "support": 72.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            20,
+            9,
+            8
+          ],
+          [
+            9,
+            10,
+            4
+          ],
+          [
+            3,
+            6,
+            3
+          ]
+        ],
+        "calibration": {
+          "ece": 0.09570669672555393,
+          "brier": 0.6278704920012108,
+          "nll": 1.0431793928146362
+        }
+      }
+    },
+    "4\u20136": {
+      "n": 14,
+      "insufficient_evidence": true,
+      "metrics": {
+        "n": 14,
+        "accuracy": 0.2857142857142857,
+        "accuracy_ci95": [
+          0.11721187910109099,
+          0.5464954117248438
+        ],
+        "macro_f1": 0.22023809523809523,
+        "per_class": {
+          "Eczema": {
+            "precision": 0.6,
+            "recall": 0.2727272727272727,
+            "f1-score": 0.375,
+            "support": 11.0
+          },
+          "Urticaria": {
+            "precision": 0.2,
+            "recall": 0.5,
+            "f1-score": 0.2857142857142857,
+            "support": 2.0
+          },
+          "Folliculitis": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.2857142857142857,
+          "macro avg": {
+            "precision": 0.26666666666666666,
+            "recall": 0.25757575757575757,
+            "f1-score": 0.22023809523809523,
+            "support": 14.0
+          },
+          "weighted avg": {
+            "precision": 0.5,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.3354591836734694,
+            "support": 14.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            4,
+            4
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "calibration": {
+          "ece": 0.1774214059114456,
+          "brier": 0.6563718333387657,
+          "nll": 1.0622628927230835
+        }
+      }
+    },
+    "7\u201310": {
+      "n": 0,
+      "insufficient_evidence": true,
+      "metrics": null
+    },
+    "unknown": {
+      "n": 0,
+      "insufficient_evidence": true,
+      "metrics": null
+    }
+  },
+  "robustness": {
+    "blur": {
+      "classification": {
+        "n": 86,
+        "accuracy": 0.32558139534883723,
+        "accuracy_ci95": [
+          0.23585553745183332,
+          0.43022342819437065
+        ],
+        "macro_f1": 0.27023661270236615,
+        "per_class": {
+          "Eczema": {
+            "precision": 0.52,
+            "recall": 0.2708333333333333,
+            "f1-score": 0.3561643835616438,
+            "support": 48.0
+          },
+          "Urticaria": {
+            "precision": 0.2692307692307692,
+            "recall": 0.56,
+            "f1-score": 0.36363636363636365,
+            "support": 25.0
+          },
+          "Folliculitis": {
+            "precision": 0.1111111111111111,
+            "recall": 0.07692307692307693,
+            "f1-score": 0.09090909090909091,
+            "support": 13.0
+          },
+          "accuracy": 0.32558139534883723,
+          "macro avg": {
+            "precision": 0.30011396011396013,
+            "recall": 0.30258547008547004,
+            "f1-score": 0.27023661270236615,
+            "support": 86.0
+          },
+          "weighted avg": {
+            "precision": 0.3852931822699265,
+            "recall": 0.32558139534883723,
+            "f1-score": 0.3182397405079788,
+            "support": 86.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            13,
+            28,
+            7
+          ],
+          [
+            10,
+            14,
+            1
+          ],
+          [
+            2,
+            10,
+            1
+          ]
+        ],
+        "calibration": {
+          "ece": 0.08547694634559543,
+          "brier": 0.6856817327885746,
+          "nll": 1.1257649660110474
+        }
+      },
+      "selective": {
+        "accepted_n": 0,
+        "total_n": 86,
+        "coverage": 0.0,
+        "rejected_fraction": 1.0,
+        "accepted_accuracy": null,
+        "accepted_accuracy_ci95": null
+      }
+    },
+    "dark": {
+      "classification": {
+        "n": 86,
+        "accuracy": 0.3953488372093023,
+        "accuracy_ci95": [
+          0.29862264637556246,
+          0.5010247330121598
+        ],
+        "macro_f1": 0.28521684077239634,
+        "per_class": {
+          "Eczema": {
+            "precision": 0.5666666666666667,
+            "recall": 0.3541666666666667,
+            "f1-score": 0.4358974358974359,
+            "support": 48.0
+          },
+          "Urticaria": {
+            "precision": 0.30357142857142855,
+            "recall": 0.68,
+            "f1-score": 0.41975308641975306,
+            "support": 25.0
+          },
+          "Folliculitis": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 13.0
+          },
+          "accuracy": 0.3953488372093023,
+          "macro avg": {
+            "precision": 0.2900793650793651,
+            "recall": 0.3447222222222222,
+            "f1-score": 0.28521684077239634,
+            "support": 86.0
+          },
+          "weighted avg": {
+            "precision": 0.40452657807308967,
+            "recall": 0.3953488372093023,
+            "f1-score": 0.3653128381810552,
+            "support": 86.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            17,
+            31,
+            0
+          ],
+          [
+            8,
+            17,
+            0
+          ],
+          [
+            5,
+            8,
+            0
+          ]
+        ],
+        "calibration": {
+          "ece": 0.1341691928547482,
+          "brier": 0.643493230981597,
+          "nll": 1.0611976385116577
+        }
+      },
+      "selective": {
+        "accepted_n": 0,
+        "total_n": 86,
+        "coverage": 0.0,
+        "rejected_fraction": 1.0,
+        "accepted_accuracy": null,
+        "accepted_accuracy_ci95": null
+      }
+    },
+    "bright": {
+      "classification": {
+        "n": 86,
+        "accuracy": 0.47674418604651164,
+        "accuracy_ci95": [
+          0.37445361147407896,
+          0.5810235839454149
+        ],
+        "macro_f1": 0.42712242712242715,
+        "per_class": {
+          "Eczema": {
+            "precision": 0.627906976744186,
+            "recall": 0.5625,
+            "f1-score": 0.5934065934065934,
+            "support": 48.0
+          },
+          "Urticaria": {
+            "precision": 0.42105263157894735,
+            "recall": 0.32,
+            "f1-score": 0.36363636363636365,
+            "support": 25.0
+          },
+          "Folliculitis": {
+            "precision": 0.25,
+            "recall": 0.46153846153846156,
+            "f1-score": 0.32432432432432434,
+            "support": 13.0
+          },
+          "accuracy": 0.47674418604651164,
+          "macro avg": {
+            "precision": 0.43298653610771115,
+            "recall": 0.4480128205128205,
+            "f1-score": 0.42712242712242715,
+            "support": 86.0
+          },
+          "weighted avg": {
+            "precision": 0.5106494264324954,
+            "recall": 0.47674418604651164,
+            "f1-score": 0.48593769524002084,
+            "support": 86.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            27,
+            10,
+            11
+          ],
+          [
+            10,
+            8,
+            7
+          ],
+          [
+            6,
+            1,
+            6
+          ]
+        ],
+        "calibration": {
+          "ece": 0.1180479755235273,
+          "brier": 0.651146633239417,
+          "nll": 1.078755259513855
+        }
+      },
+      "selective": {
+        "accepted_n": 6,
+        "total_n": 86,
+        "coverage": 0.06976744186046512,
+        "rejected_fraction": 0.9302325581395349,
+        "accepted_accuracy": 0.3333333333333333,
+        "accepted_accuracy_ci95": [
+          0.09676933255921683,
+          0.7000116786584712
+        ]
+      }
+    }
+  },
+  "export": {
+    "max_abs_logit_delta": 0.09434366226196289,
+    "top1_agreement": 1.0,
+    "desktop_median_ms": 0.6285224990278948,
+    "desktop_p95_ms": 0.8094727472780505,
+    "quantized": {
+      "n": 86,
+      "accuracy": 0.43023255813953487,
+      "accuracy_ci95": [
+        0.3307917119906583,
+        0.5356398742678232
+      ],
+      "macro_f1": 0.3762254901960784,
+      "per_class": {
+        "Eczema": {
+          "precision": 0.6216216216216216,
+          "recall": 0.4791666666666667,
+          "f1-score": 0.5411764705882353,
+          "support": 48.0
+        },
+        "Urticaria": {
+          "precision": 0.36666666666666664,
+          "recall": 0.44,
+          "f1-score": 0.4,
+          "support": 25.0
+        },
+        "Folliculitis": {
+          "precision": 0.15789473684210525,
+          "recall": 0.23076923076923078,
+          "f1-score": 0.1875,
+          "support": 13.0
+        },
+        "accuracy": 0.43023255813953487,
+        "macro avg": {
+          "precision": 0.38206100837679785,
+          "recall": 0.38331196581196586,
+          "f1-score": 0.3762254901960784,
+          "support": 86.0
+        },
+        "weighted avg": {
+          "precision": 0.4774085591099055,
+          "recall": 0.43023255813953487,
+          "f1-score": 0.4466740766073871,
+          "support": 86.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          23,
+          13,
+          12
+        ],
+        [
+          10,
+          11,
+          4
+        ],
+        [
+          4,
+          6,
+          3
+        ]
+      ],
+      "calibration": {
+        "ece": 0.06943965374037275,
+        "brier": 0.6341748364387433,
+        "nll": 1.0484766960144043
+      }
+    }
+  }
+}
